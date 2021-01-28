@@ -11,9 +11,18 @@ namespace TMS.Net07.Homework.HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Enter numer: ");
-            int number = int.Parse(Console.ReadLine());
-            Console.WriteLine(number);
-            Console.ReadLine();
+
+            string input = Console.ReadLine();
+            int number;
+            bool result = int.TryParse(input, out number);
+            if (result == true)
+            {
+                Console.WriteLine($"Your number is {number}");
+            }
+            else
+            {
+                Console.WriteLine($"{input} is not number");
+            }
         }
     }
 }
