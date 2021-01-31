@@ -8,49 +8,23 @@ namespace TMS.Net07.Homework.DaysOfWeek
 {
     class Program
     {
-        enum DaysOfWeek
-        {
-            ПОНЕДЕЛЬНИК,
-            ВТОРНИК,
-            СРЕДА,
-            ЧЕТВЕРГ,
-            ПЯТНИЦА,
-            СУББОТА,
-            ВОСКРЕСЕНЬЕ
-        }
         static void Main(string[] args)
         {
             while (true)
             {
-                Console.WriteLine("Введите день недели для перевода на русский: ");
-                var day = Console.ReadLine();
-                switch (day.ToUpper())
+                Console.WriteLine("Выберите\n1) easy task\n2) middle task\n3) hard task\n4) exit");
+                var choise = Console.ReadLine();
+                switch (choise)
                 {
-                    case ("MONDAY"):
-                        Console.WriteLine(DaysOfWeek.ПОНЕДЕЛЬНИК);
+                    case ("1"): easy.task();
                         break;
-                    case ("TUESDAY"):
-                        Console.WriteLine(DaysOfWeek.ВТОРНИК);
+                    case ("2"): middle.task();
                         break;
-                    case ("WENSDAY"):
-                        Console.WriteLine(DaysOfWeek.СРЕДА);
+                    case ("3"): hard.task();
                         break;
-                    case ("THURSDAY"):
-                        Console.WriteLine(DaysOfWeek.ЧЕТВЕРГ);
-                        break;
-                    case ("FRIDAY"):
-                        Console.WriteLine(DaysOfWeek.ПЯТНИЦА);
-                        break;
-                    case ("SATURDAY"):
-                        Console.WriteLine(DaysOfWeek.СУББОТА);
-                        break;
-                    case ("SUNDAY"):
-                        Console.WriteLine(DaysOfWeek.ВОСКРЕСЕНЬЕ);
-                        break;
-                    case ("EXIT"):
+                    case ("4"):
                         return;
-                    default:
-                        Console.WriteLine("Введите верно");
+                    default: Console.WriteLine("Выберите верный вариант");
                         break;
                 }
             }
