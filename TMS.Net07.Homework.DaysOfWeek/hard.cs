@@ -12,16 +12,29 @@ namespace TMS.Net07.Homework.DaysOfWeek
         {
             while (true)
             {
+                int day;
+                int month;
+                int year;
                 Console.WriteLine("Введите вашу дату: ");
-                var input = Console.ReadLine();
-                if (input[2] == '.' && input[5] == '.')
+                var partsOfDate = Console.ReadLine().Split('.');
+                if (partsOfDate.Length == 3)
                 {
-                    string[] partsOfDate = input.Split('.');
-                    Date date = new Date(int.Parse(partsOfDate[0]), int.Parse(partsOfDate[1]), int.Parse(partsOfDate[2]));
-                    date.Print();
-                    date.DayOfWeek();
+                    //string[] partsOfDate = input.Split('.');
+                    bool isRightDay = int.TryParse(partsOfDate[0], out day);
+                    bool isRightMonth = int.TryParse(partsOfDate[1], out month);
+                    bool isRightYear = int.TryParse(partsOfDate[2], out year);
+                    if(isRightDay==true &&isRightMonth==true&&isRightYear==true)
+                    {
+                        Date date = new Date(int.Parse(partsOfDate[0]), int.Parse(partsOfDate[1]), int.Parse(partsOfDate[2]));
+                        date.Print();
+                        date.DayOfWeek();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Неверный ввод");
+                    }
                 }
-                else if (input.ToUpper() == "EXIT")
+                else if (partsOfDate[0].ToUpper() == "EXIT")
                 {
                     return;
                 }
@@ -29,6 +42,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
                 {
                     Console.WriteLine("Неверный ввод");
                 }
+
             }
         }
     }

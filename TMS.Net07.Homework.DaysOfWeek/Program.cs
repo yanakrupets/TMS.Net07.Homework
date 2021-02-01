@@ -12,7 +12,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
         {
             while (true)
             {
-                Console.WriteLine("Выберите\n1) easy task\n2) middle task\n3) hard task\n4) exit");
+                Console.WriteLine("Выберите:\n1) easy task\n2) middle task\n3) hard task\n4) exit");
                 var choise = Console.ReadLine();
                 switch (choise)
                 {
