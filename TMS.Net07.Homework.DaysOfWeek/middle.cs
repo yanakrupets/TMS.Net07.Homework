@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TMS.Net07.Homework.DaysOfWeek
 {
-    class middle
+    class Middle
     {
         enum DaysOfWeek
         {
@@ -18,9 +18,9 @@ namespace TMS.Net07.Homework.DaysOfWeek
             СУББОТА,
             ВОСКРЕСЕНЬЕ
         }
-         public static void task()
+         public static void Task()
         {
-            DateTime date = new DateTime();
+            DateTime date;
             string inputDate;
             var maxDate = new DateTime(2999, 12, 31);
             while (true)

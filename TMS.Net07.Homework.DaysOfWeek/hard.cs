@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace TMS.Net07.Homework.DaysOfWeek
 {
-    class hard
+    class Hard
     {
-        public static void task()
+        public static void Task()
         {
-            while (true)
+            string[] partsOfDate = new string[1] { "0" };
+            while (partsOfDate[0].ToUpper() != "EXIT")
             {
                 int day;
                 int month;
                 int year;
                 Console.WriteLine("Введите вашу дату: ");
-                var partsOfDate = Console.ReadLine().Split('.');
+                partsOfDate = Console.ReadLine().Split('.');
                 if (partsOfDate.Length == 3)
                 {
-                    //string[] partsOfDate = input.Split('.');
                     bool isRightDay = int.TryParse(partsOfDate[0], out day);
                     bool isRightMonth = int.TryParse(partsOfDate[1], out month);
                     bool isRightYear = int.TryParse(partsOfDate[2], out year);
-                    if(isRightDay==true &&isRightMonth==true&&isRightYear==true)
+                    if (isRightDay == true && isRightMonth == true && isRightYear == true)
                     {
                         Date date = new Date(int.Parse(partsOfDate[0]), int.Parse(partsOfDate[1]), int.Parse(partsOfDate[2]));
                         date.Print();
@@ -34,15 +34,10 @@ namespace TMS.Net07.Homework.DaysOfWeek
                         Console.WriteLine("Неверный ввод");
                     }
                 }
-                else if (partsOfDate[0].ToUpper() == "EXIT")
-                {
-                    return;
-                }
                 else
                 {
                     Console.WriteLine("Неверный ввод");
                 }
-
             }
         }
     }
@@ -58,20 +53,20 @@ namespace TMS.Net07.Homework.DaysOfWeek
     }
     class Date
     {
-        private int m_day;
-        private int m_month;
-        private int m_year;
+        private int _day;
+        private int _month;
+        private int _year;
 
         public Date()
         {
-            m_day = 1;
-            m_month = 1;
-            m_year = 1;
+            _day = 1;
+            _month = 1;
+            _year = 1;
         }
 
         public Date(int day, int month, int year)
         {
-            if (Check(day, month, year) == false)
+            if (!CheckingIfDateIsCorrect(day, month, year))
             {
                 Console.WriteLine("Неверная дата");
             }
@@ -79,9 +74,9 @@ namespace TMS.Net07.Homework.DaysOfWeek
 
         public void Print()
         {
-            if (Check(m_day, m_month, m_year) == true)
+            if (CheckingIfDateIsCorrect(_day, _month, _year))
             {
-                Console.WriteLine($"Ваша дата: {m_day}.{m_month}.{m_year}");
+                Console.WriteLine($"Ваша дата: {_day}.{_month}.{_year}");
             }
             else
             {
@@ -91,7 +86,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
 
         public void DayOfWeek()
         {
-            if (Check(m_day, m_month, m_year) == true)
+            if (CheckingIfDateIsCorrect(_day, _month, _year) == true)
             {
                 int count = 0;
                 for (int i = 4; i < 2996; i += 4)
@@ -101,8 +96,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
                 int[] leapYears = new int[count];
                 for (int i = 4, j = 0; i < 2996; i += 4, j++)
                 {
-                    if (i == 100 || i == 200 || i == 300 || i == 500 || i == 600 || i == 700 || i == 900 || i == 1000 || i == 1100 || i == 1300 || i == 1400
-                        || i == 1500 || i == 1700 || i == 1800 || i == 1900 || i == 2100 || i == 2200 || i == 2300 || i == 2500 || i == 2600 || i == 2700 || i == 2900)
+                    if (i % 100 == 0 && i % 400 != 0)
                     {
                         j--;
                     }
@@ -114,21 +108,21 @@ namespace TMS.Net07.Homework.DaysOfWeek
 
                 int k = 0;
                 int days = 0;
-                if (m_year == 1)
+                if (_year == 1)
                 {
-                    if (m_month == 1)
+                    if (_month == 1)
                     {
-                        days = m_day;
+                        days = _day;
                     }
                     else
                     {
-                        for (int iMonth = 1; iMonth < m_month; iMonth++)
+                        for (int iMonth = 1; iMonth < _month; iMonth++)
                         {
-                            if (iMonth == 2 && m_year != leapYears[k])
+                            if (iMonth == 2 && _year != leapYears[k])
                             {
                                 days += 28;
                             }
-                            else if (iMonth == 2 && m_year == leapYears[k])
+                            else if (iMonth == 2 && _year == leapYears[k])
                             {
                                 days += 29;
                             }
@@ -141,12 +135,12 @@ namespace TMS.Net07.Homework.DaysOfWeek
                                 days += 30;
                             }
                         }
-                        days += m_day;
+                        days += _day;
                     }
                 }
                 else
                 {
-                    for (int iYear = 1; iYear < m_year; iYear++)
+                    for (int iYear = 1; iYear < _year; iYear++)
                     {
                         if (iYear != leapYears[k])
                         {
@@ -159,19 +153,19 @@ namespace TMS.Net07.Homework.DaysOfWeek
                         }
                     }
                     k = 0;
-                    if (m_month == 1)
+                    if (_month == 1)
                     {
-                        days += m_day;
+                        days += _day;
                     }
                     else
                     {
-                        for (int iMonth = 1; iMonth < m_month; iMonth++)
+                        for (int iMonth = 1; iMonth < _month; iMonth++)
                         {
-                            if (iMonth == 2 && m_year != leapYears[k])
+                            if (iMonth == 2 && _year != leapYears[k])
                             {
                                 days += 28;
                             }
-                            else if (iMonth == 2 && m_year == leapYears[k])
+                            else if (iMonth == 2 && _year == leapYears[k])
                             {
                                 days += 29;
                             }
@@ -184,7 +178,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
                                 days += 30;
                             }
                         }
-                        days += m_day;
+                        days += _day;
                     }
                 }
 
@@ -235,7 +229,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
             }
         }
 
-        public bool Check(int checkDay, int checkMonth, int checkYear)
+        public bool CheckingIfDateIsCorrect(int checkDay, int checkMonth, int checkYear)
         {
             if (0 < checkDay && checkDay < 32 && 0 < checkMonth && checkMonth < 13 && 0 < checkYear && checkYear < 2999)
             {
@@ -265,9 +259,9 @@ namespace TMS.Net07.Homework.DaysOfWeek
                         {
                             if (checkDay <= 29)
                             {
-                                m_day = checkDay;
-                                m_month = checkMonth;
-                                m_year = checkYear;
+                                _day = checkDay;
+                                _month = checkMonth;
+                                _year = checkYear;
                                 return true;
                             }
                             return false;
@@ -275,9 +269,9 @@ namespace TMS.Net07.Homework.DaysOfWeek
                     }
                     if (checkDay <= 28)
                     {
-                        m_day = checkDay;
-                        m_month = checkMonth;
-                        m_year = checkYear;
+                        _day = checkDay;
+                        _month = checkMonth;
+                        _year = checkYear;
                         return true;
                     }
                 }
@@ -285,9 +279,9 @@ namespace TMS.Net07.Homework.DaysOfWeek
                 {
                     if (checkDay <= 31)
                     {
-                        m_day = checkDay;
-                        m_month = checkMonth;
-                        m_year = checkYear;
+                        _day = checkDay;
+                        _month = checkMonth;
+                        _year = checkYear;
                         return true;
                     }
                     return false;
@@ -296,9 +290,9 @@ namespace TMS.Net07.Homework.DaysOfWeek
                 {
                     if (checkDay <= 30)
                     {
-                        m_day = checkDay;
-                        m_month = checkMonth;
-                        m_year = checkYear;
+                        _day = checkDay;
+                        _month = checkMonth;
+                        _year = checkYear;
                         return true;
                     }
                     return false;

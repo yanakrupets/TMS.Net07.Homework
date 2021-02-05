@@ -16,11 +16,11 @@ namespace TMS.Net07.Homework.DaysOfWeek
                 var choise = Console.ReadLine();
                 switch (choise)
                 {
-                    case ("1"): easy.task();
+                    case ("1"): Easy.Task();
                         break;
-                    case ("2"): middle.task();
+                    case ("2"): Middle.Task();
                         break;
-                    case ("3"): hard.task();
+                    case ("3"): Hard.Task();
                         break;
                     case ("4"):
                         return;

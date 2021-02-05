@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TMS.Net07.Homework.DaysOfWeek
 {
-    class easy
+    class Easy
     {
         enum DaysOfWeek
         {
@@ -18,7 +18,7 @@ namespace TMS.Net07.Homework.DaysOfWeek
             СУББОТА,
             ВОСКРЕСЕНЬЕ
         }
-        public static void task()
+        public static void Task()
         {
             while (true)
             {
