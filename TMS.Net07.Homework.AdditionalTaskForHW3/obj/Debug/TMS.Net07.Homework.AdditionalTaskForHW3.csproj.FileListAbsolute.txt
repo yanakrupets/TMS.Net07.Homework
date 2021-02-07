@@ -1,0 +1,7 @@
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\bin\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.exe.config
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\bin\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.exe
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\bin\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.pdb
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\obj\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.csprojAssemblyReference.cache
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\obj\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.csproj.CoreCompileInputs.cache
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\obj\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.exe
+D:\TMS.Net07.Homework\TMS.Net07.Homework.AdditionalTaskForHW3\obj\Debug\TMS.Net07.Homework.AdditionalTaskForHW3.pdb

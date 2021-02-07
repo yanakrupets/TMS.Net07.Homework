@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Net07.Homework.Calculator", "TMS.Net07.Homework.Calculator.csproj", "{43F747C5-ADC5-405A-9B35-96DA80DFFF08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43F747C5-ADC5-405A-9B35-96DA80DFFF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F747C5-ADC5-405A-9B35-96DA80DFFF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F747C5-ADC5-405A-9B35-96DA80DFFF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F747C5-ADC5-405A-9B35-96DA80DFFF08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF5E3BF4-072D-4EFE-8E17-D331A993E037}
+	EndGlobalSection
+EndGlobal
