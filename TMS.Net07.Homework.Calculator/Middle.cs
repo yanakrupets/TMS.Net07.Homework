@@ -19,7 +19,7 @@ namespace TMS.Net07.Homework.Calculator
             {
                 Console.WriteLine("Choose operation:\n+(addition)\n-(subtraction)\n*(multiplication)\n/(division)\n%(remainder of the division)");
                 var choise = Console.ReadLine();
-                switch (choise.ToLower())
+                switch (choise)
                 {
                     case ("+"):
                         Console.WriteLine($"Result is {number1 + number2}");
@@ -31,8 +31,16 @@ namespace TMS.Net07.Homework.Calculator
                         Console.WriteLine($"Result is {number1 * number2}");
                         break;
                     case ("/"):
-                        Console.WriteLine($"Result is {number1 / number2}");
-                        break;
+                        if (number2 != 0)
+                        {
+                            Console.WriteLine($"Result is {number1 / number2}");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Mistake");
+                            break;
+                        }
                     case ("%"):
                         Console.WriteLine($"Result is {number1 % number2}");
                         break;

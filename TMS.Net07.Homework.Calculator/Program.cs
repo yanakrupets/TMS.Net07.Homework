@@ -14,7 +14,7 @@ namespace TMS.Net07.Homework.Calculator
             {
                 Console.WriteLine($"Choose task:{Environment.NewLine}1) Easy task{Environment.NewLine}2) Middle task{Environment.NewLine}3) Hard task{Environment.NewLine}4) Exit");
                 var choise = Console.ReadLine();
-                switch (choise.ToLower())
+                switch (choise)
                 {
                     case ("1"):
                         Easy.Task();
@@ -25,7 +25,7 @@ namespace TMS.Net07.Homework.Calculator
                     case ("3"):
                         Hard.Task();
                         break;
-                    case ("exit"):
+                    case ("4"):
                         return;
                     default:
                         Console.WriteLine("Wrong choise");

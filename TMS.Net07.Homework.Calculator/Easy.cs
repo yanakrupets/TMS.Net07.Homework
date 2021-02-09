@@ -81,18 +81,15 @@ namespace TMS.Net07.Homework.Calculator
             {
                 if (targetCurrency.ToLower() == "byn")
                 {
-                    decimal EURtoBYN = 3.16m;
-                    Console.WriteLine($"{amount} {sourceCurrency} is equal to {amount * EURtoBYN} {targetCurrency}");
+                    Console.WriteLine($"{amount} {sourceCurrency} is equal to {amount * 3.16m} {targetCurrency}");
                 }
                 else if (targetCurrency.ToLower() == "rub")
                 {
-                    decimal EURtoRUB = 91.08m;
-                    Console.WriteLine($"{amount} {sourceCurrency} is equal to {amount * EURtoRUB} {targetCurrency}");
+                    Console.WriteLine($"{amount} {sourceCurrency} is equal to {amount * 91.08m} {targetCurrency}");
                 }
                 else if (targetCurrency.ToLower() == "usd")
                 {
-                    decimal EURtoUSD = 1.20m;
-                    Console.WriteLine($"{amount} {sourceCurrency} is equal to {amount * EURtoUSD} {targetCurrency}");
+                    Console.WriteLine($"{amount} {sourceCurrency} is equal to {amount * 1.20m} {targetCurrency}");
                 }
                 else if (targetCurrency.ToLower() == "eur")
                 {

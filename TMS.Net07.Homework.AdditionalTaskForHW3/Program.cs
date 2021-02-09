@@ -15,7 +15,7 @@ namespace TMS.Net07.Homework.AdditionalTaskForHW3
                 Console.WriteLine($"Choose:{Environment.NewLine}1) Factorial cycle{Environment.NewLine}2) Factorial recursion{Environment.NewLine}" +
                     $"3) Fibonachi{Environment.NewLine}4) Exit");
                 var choise = Console.ReadLine();
-                switch(choise.ToLower())
+                switch(choise)
                 {
                     case ("1"):
                         FactorialCycle.Task();

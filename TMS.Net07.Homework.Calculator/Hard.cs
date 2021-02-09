@@ -22,12 +22,12 @@ namespace TMS.Net07.Homework.Calculator
                     operation = Convert.ToString(expression[i]);
                     break;
                 }
-                else if (expression[0] == 's' && expression[1] == 'q' && expression[2] == 'r' && expression[3] == 't')
+                else if (expression.StartsWith("sqrt"))
                 {
                     operation = "sqrt";
                     break;
                 }
-                else if (expression[0] == 's' && expression[1] == 'q' && expression[2] == 'r')
+                else if (expression.StartsWith("sqr"))
                 {
                     operation = "sqr";
                     break;
@@ -69,7 +69,14 @@ namespace TMS.Net07.Homework.Calculator
                     }
                     else if (isNumber1 && isNumber2 && operation == "/")
                     {
-                        Console.WriteLine($"{number1} {operation} {number2} = {number1 / number2}");
+                        if (number2 != 0)
+                        {
+                            Console.WriteLine($"{number1} {operation} {number2} = {number1 / number2}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Mistake");
+                        }
                     }
                     else if (isNumber1 && isNumber2 && operation == "%")
                     {
@@ -92,7 +99,7 @@ namespace TMS.Net07.Homework.Calculator
 
             else if(operation == "sqr")
             {
-                string[] partsOfExpression = expression.Split(Convert.ToChar('r'));
+                string[] partsOfExpression = expression.Split('r');
                 if (partsOfExpression.Length == 2)
                 {
                     int number;
@@ -114,7 +121,7 @@ namespace TMS.Net07.Homework.Calculator
             
             else if(operation == "sqrt")
             {
-                string[] partsOfExpression = expression.Split(Convert.ToChar('t'));
+                string[] partsOfExpression = expression.Split('t');
                 if (partsOfExpression.Length == 2)
                 {
                     int number;
